@@ -1,0 +1,26 @@
+.nav-responsive-icon{
+    color: white;
+  }
+  .social-icon {
+    padding: 0 10%;
+  
+  
+  }
+  
+  .fb-icon {
+    color: #4267b2;
+    padding: 0 10px;
+  }
+  .youtube-icon {
+    color: #ff0000;
+    padding: 0 10px;
+    
+  }
+  .twitter-icon {
+    color: #00acee;
+    padding: 0 10px 0 0;
+  }
+  
+p{
+    color: black;
+}

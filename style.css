@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat&family=Roboto:ital,wght@1,300&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+*{
+  margin: 0;
+  padding: 0;box-sizing: border-box;
+}
+
+header {
+  /* background-image: url("img/banner-g75d026a7e_1920.png"); */
+  /* background-image: url("img/banner-1973380_1920.jpg"); */
+  background-image: url("img/hearts-3063621_1920.jpg");
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navbar {
+  padding: 1% 10% 1% 5%;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.navbar .navbar-brand {
+  color: white;
+  font-size: 40px;
+  font-weight: 1000;
+  font-style: italic;
+}
+.navbar-nav .nav-link {
+  color: white;
+  margin: 8px;
+  border-radius: 10px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+.navbar-nav .nav-link:hover {
+  background-color: rgba(168, 212, 251, 0.2);
+  color: aqua;
+  transform: scale(1.05);
+}
+
+.banner-container {
+  height: 80vh;
+}
+.heading-banner {
+  font-size: 50px;
+  font-weight: bolder;
+}
+.heading-text {
+  font-size: 25px;
+}
+.banner-headline {
+  font-weight: bolder;
+
+  font-size: 50px;
+}
+.banner-text {
+  font-size: 20px;
+  padding-top: 2%;
+}
+
+body {
+  font-family: "Montserrat", "sans-serif";
+}
+
+#main-container {
+  padding: 5% 10%;
+  background-color: #f2f2f2;
+}
+.main-container-heading{
+  font-weight: bolder;
+  color: red;
+}
+
+.main-container-content {
+  border: 1px solid red;
+  padding: 20px;
+  margin: 10% 5%;
+  border-radius: 10px;
+}
+.main-container-ul li a{
+  text-decoration: none;
+  color: rgb(29, 28, 28);
+  padding: 5px;
+
+}
+.quary-icon {
+  color: red;
+}
+
+
+
+
+
+.footer-title {
+  font-size: 22px;
+  font-weight: bold;
+  /* background-color: #ff0000; */
+  padding: 0 10%;
+}
+
+.footer-content{
+  display: flex;
+  align-items: center;
+  height: 30vh;
+
+ 
+}
+
+
+
+ 
+.non-root{
+  /* background-image: url("img/banner-g75d026a7e_1920.png"); */
+    /* background-image: url("img/banner-1973380_1920.jpg"); */
+  background-image: url("img/hearts-3063621_1920.jpg");
+  background-attachment:fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.form-content{
+  background-color: rgba(249, 102, 102, 0.5);
+  border-radius: 20px;
+}
+.form-lable{
+  padding:5px 0 5px 0;
+  font-weight: bolder;
+  color: #000000;
+}
+
+/* profile page */
+.picture ul{
+  list-style-type: none;
+  min-width:200px;
+  height: 200px;
+  border: red;
+}
