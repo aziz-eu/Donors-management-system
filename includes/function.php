@@ -1,9 +1,9 @@
 <?php 
-    function redirect($to, $msg = ''){
+    function redirect($to, $msg = '',$type = 'success'){
         $location = 'location: ' . $to;
 
         if(!empty($msg) && strlen($msg) > 0 )
-            $location .=  '?msg=' . $msg;
+            $location .=  '?msg=' . $msg  . '&type=' . $type;;
 
         header($location);
         exit();

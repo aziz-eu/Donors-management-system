@@ -15,7 +15,7 @@ if(isset($_POST['regForm'])){
     $phone =  trim($_POST['phone']);
     $address =  trim($_POST['address']);
     $division =  trim($_POST['division']);
-    $city =  trim($_POST['city']);
+    $city =  trim($_POST['district']);
     $upazila =  trim($_POST['upazila']);
     $username = trim( $_POST['username']);
     $password =  md5(trim($_POST['password']));
@@ -85,7 +85,7 @@ if(isset($_POST['regForm'])){
                     name="fristname"
                     id="fristName"
                     required
-                    placeholder="e.g. Jack"
+                    placeholder="e.g. Anis"
                   />
                   <label for="lastname" class="form-lable">Last Name</label>
                   <input
@@ -94,7 +94,7 @@ if(isset($_POST['regForm'])){
                     name="lastname"
                     id="lastName"
                     required
-                    placeholder="e.g. Sparow"
+                    placeholder="e.g. Ahmed "
                   />
                   <label for="blood-group" class="form-lable"
                     >Blood Group</label
@@ -104,19 +104,19 @@ if(isset($_POST['regForm'])){
                     name="blood_group"
                     id="blood-group"
                   >
-                    <option value="A-Positive" selected>A+</option>
-                    <option value="A-Neagtive">A-</option>
-                    <option value="B-Positive">B+</option>
-                    <option value="B-Neagtive">B-</option>
-                    <option value="AB-Positive">AB+</option>
-                    <option value="AB-Neagtive">AB-</option>
-                    <option value="O-Positive">O+</option>
-                    <option value="O-Neagtive">O-</option>
+                    <option value="A+" selected>A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
                   </select>
                   <label for="gender" class="form-lable">Gender</label>
                   <select class="form-select" name="gender" id="gender">
-                    <option value="male" selected>Male</option>
-                    <option value="flmale">Female</option>
+                    <option value="Male" selected>Male</option>
+                    <option value="Memale">Female</option>
                     <option value="other">Other</option>
                   </select>
                   <label for="Age" class="form-lable">Age</label>
@@ -144,7 +144,7 @@ if(isset($_POST['regForm'])){
                     name="email"
                     id="email"
                     required
-                    placeholder="e.g. captain@emaxple.com"
+                    placeholder="e.g. something@emaxple.com"
                   />
                   <label for="phone" class="form-lable">Phone</label>
                   <input
@@ -162,7 +162,7 @@ if(isset($_POST['regForm'])){
                     name="address"
                     id="address"
                     required
-                    placeholder="e.g. post office: New P.O"
+                    placeholder="e.g. Dhanmondi Rd #12"
                   />
                   
                   <label for="division" class="form-lable">Division</label>
@@ -170,30 +170,19 @@ if(isset($_POST['regForm'])){
                     <option value="select-message" selected>
                       Plese Select Your Division
                     </option>
-                    <option value="Dhaka">Dhaka</option>
-                    <option value="Khulna">Khulna</option>
-                    <option value="Barishal">Barishal</option>
                   </select>
 
-                  <label for="city" class="form-lable">City</label>
-                  <select class="form-select" name="city" id="city">
+                  <label for="district" class="form-lable">City</label>
+                  <select class="form-select" name="district" id="city">
                     <option value="select-message" selected>
-                      Plese Select Your City
+                      Plese Select Your District
                     </option>
-                    <option value="noakhali">Noakhali</option>
-                    <option value="dhaka">Dhaka</option>
-                    <option value="cumilla">Cumilla</option>
-                    <option value="bola">Bola</option>
-                  </select>
+                                    </select>
                   <label for="upazila" class="form-lable">Upazila</label>
                   <select class="form-select" name="upazila" id="upazila">
                     <option value="select-message" selected>
                       Plese Select Your Upazila
-                    </option>
-                    <option value="noakhali">Sadar</option>
-                    <option value="dhaka">Senbag</option>
-                    <option value="cumilla">Kobirahat</option>
-                    <option value="bola">Suborno Chor</option>
+                    </option>                   
                   </select>
                   <label for="user-name" class="form-lable"
                     >Set Your UserName:</label
@@ -204,7 +193,7 @@ if(isset($_POST['regForm'])){
                     name="username"
                     id="user-Name"
                     required
-                    placeholder="e.g. jack2022"
+                    placeholder="e.g. anis2022"
                   />
                   <label for="password" class="form-lable"
                     >Set Your Password</label
@@ -236,5 +225,6 @@ if(isset($_POST['regForm'])){
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

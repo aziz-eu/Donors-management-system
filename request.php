@@ -1,3 +1,39 @@
+<?php 
+include_once 'includes/function.php';
+include_once 'includes/session.php';
+include_once 'config/db.php';
+
+
+if(isset($_POST['reqForm'])){
+    //pr($_POST, true);
+    $patient_name =  trim($_POST['patient_name']);
+    $blood_group =  trim($_POST['blood_group']);
+    $required_unit =  trim($_POST['required_unit']);
+    $gender = trim($_POST['gender']);
+    $age =  trim($_POST['age']);
+    $date_of_donation =  trim($_POST['date_of_donation']);
+    $hospital_name =  trim($_POST['hospital_name']);
+    $hospital_address =  trim($_POST['hospital_address']);
+    $division =  trim($_POST['division']);
+    $city =  trim($_POST['city']);
+    $upazila =  trim($_POST['upazila']);
+    $contact_person = trim( $_POST['contact_person']);
+    $contact_number =  trim($_POST['contact_number']);
+    $patient_history =  trim($_POST['patient_history']);
+
+    $sql = "INSERT INTO request_blood (patient_name, blood_group, required_unit, gender, age, date_of_donation, hospital_name, hospital_address, division, city, upazila, contact_person, contact_number, patient_history) VALUES('$patient_name', '$blood_group', '$required_unit', '$gender', '$age', '$date_of_donation', '$hospital_name', '$hospital_address',  '$division', '$city', '$upazila', '$contact_person', '$contact_number', '$patient_history' )";
+
+    if($con->query($sql) == true  ){
+      redirect('request.php', 'All blood donors received your request in your City. Thank You');
+    }
+    else{
+      echo "Error: " . $sql . "<br>" . $con->error;
+    }
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +66,7 @@
       <header>
         <nav class="navbar navbar-expand-lg">
           <div class="container-fluid">
-            <a class="navbar-brand" href="/"> SaveLife</a>
+            <a class="navbar-brand" href="./index.php"> SaveLife</a>
             <button
               class="navbar-toggler"
               type="button"
@@ -50,7 +86,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="/"
+                  <a class="nav-link active" aria-current="page" href="./index.php"
                     >Home</a
                   >
                 </li>
@@ -84,38 +120,39 @@
         <div id="donor-reg">
           <div class="container-lg">
             <div class="text-center pt-5">
+            <?php include_once 'partials/msg.php' ?>
               <h2 class="text-white font-weight-bolder">Blood Request Form</h2>
             </div>
             <div class="row justify-content-center mt-5">
               <div class="col-lg-6 mb-5 form-content py-2">
-                <form>
+                <form method="POST" action="./request.php">
                   <label for="patient-name" class="form-lable"
                     >Patient Name</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    name="fristname"
+                    name="patient_name"
                     id="fristName"
                     required
-                    placeholder="e.g. Jack Sparow"
+                    placeholder="e.g. Mrinalini Sen"
                   />
                   <label for="blood-group" class="form-lable"
                     >Blood Group</label
                   >
                   <select
                     class="form-select"
-                    name="blood-group"
+                    name="blood_group"
                     id="blood-group"
                   >
-                    <option value="A-Positive" selected>A+</option>
-                    <option value="A-Neagtive">A-</option>
-                    <option value="B-Positive">B+</option>
-                    <option value="B-Neagtive">B-</option>
-                    <option value="AB-Positive">AB+</option>
-                    <option value="AB-Neagtive">AB-</option>
-                    <option value="O-Positive">O+</option>
-                    <option value="O-Neagtive">O-</option>
+                    <option value="A+" selected>A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
                   </select>
                   <label for="required-unit" class="form-lable"
                     >Required Unit</label
@@ -123,15 +160,15 @@
                   <input
                     type="text"
                     class="form-control"
-                    name="required-unit"
+                    name="required_unit"
                     id="required-unit"
                     required
                     placeholder="e.g. 3"
                   />
                   <label for="gender" class="form-lable">Gender</label>
                   <select class="form-select" name="gender" id="gender">
-                    <option value="male" selected>Male</option>
-                    <option value="flmale">Female</option>
+                    <option value="Male" selected>Male</option>
+                    <option value="Female">Female</option>
                     <option value="other">Other</option>
                   </select>
                   <label for="Age" class="form-lable">Age</label>
@@ -149,7 +186,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    name="hospital-name"
+                    name="hospital_name"
                     id="hospital-name"
                     placeholder="e.g. Labaid Hospital "
                     required
@@ -160,30 +197,40 @@
                   <input
                     type="text"
                     class="form-control"
-                    name="address"
+                    name="hospital_address"
                     id="address"
                     required
                     placeholder="e.g. Dhanmondi, Road-04 "
                   />
-                  <label for="city" class="form-lable">City</label>
+                  <label for="date-of-donation" class="form-lable"
+                    >Date of Donation</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="date_of_donation"
+                    id="address"
+                    required
+                    placeholder="e.g. Argent (or Mention specific date and time) "
+                  />
+                  <label for="division" class="form-lable">Division</label>
+                  <select class="form-select" name="division" id="division">
+                    <option value="select-message" selected>
+                      Plese Select Your division
+                    </option>
+  
+                  </select>
+                  <label for="city" class="form-lable">District</label>
                   <select class="form-select" name="city" id="city">
                     <option value="select-message" selected>
-                      Plese Select Your City
+                      Plese Select Your District
                     </option>
-                    <option value="noakhali">Noakhali</option>
-                    <option value="dhaka">Dhaka</option>
-                    <option value="cumilla">Cumilla</option>
-                    <option value="bola">Bola</option>
                   </select>
-                  <label for="thana" class="form-lable">Upazila</label>
-                  <select class="form-select" name="thana" id="thana">
+                  <label for="upazila" class="form-lable">Upazila</label>
+                  <select class="form-select" name="upazila" id="upazila">
                     <option value="select-message" selected>
-                      Plese Select Your City
+                      Plese Select Your Upazila
                     </option>
-                    <option value="noakhali">Sadar</option>
-                    <option value="dhaka">Senbag</option>
-                    <option value="cumilla">Kobirahat</option>
-                    <option value="bola">Suborno Chor</option>
                   </select>
                   <label for="contact-person-name" class="form-lable"
                     >Contact Person Name:</label
@@ -191,10 +238,10 @@
                   <input
                     type="text"
                     class="form-control"
-                    name="fristname"
-                    id="fristName"
+                    name="contact_person"
+                    id="contact-person"
                     required
-                    placeholder="e.g.Elizabeth Swann"
+                    placeholder="e.g.Elizabeth "
                   />
                   <label for="phone" class="form-lable"
                     >Contact Person Phone:</label
@@ -202,7 +249,7 @@
                   <input
                     type="tel"
                     class="form-control"
-                    name="phone"
+                    name="contact_number"
                     id="phone"
                     required
                     placeholder="e.g 01555566677"
@@ -211,7 +258,7 @@
                     >Patient History</label
                   >
                   <textarea
-                    name="patient-info"
+                    name="patient_history"
                     class="form-control"
                     id=""
                     cols="30"
@@ -219,7 +266,7 @@
                     placeholder="why need blood?"
                   ></textarea>
                   <div class="text-center my-3">
-                    <button type="submit" class="btn btn-dark">Submit</button>
+                    <button type="submit" name="reqForm" class="btn btn-dark">Submit</button>
                   </div>
                 </form>
               </div>
@@ -261,5 +308,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

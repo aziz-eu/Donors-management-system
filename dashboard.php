@@ -33,7 +33,7 @@
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/"> SaveLife</a>
+          <a class="navbar-brand" href="./index.php"> SaveLife</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span><i class="fa fa-bars nav-responsive-icon" aria-hidden="true"></i></span>
@@ -56,23 +56,51 @@
 
     </header>
     <main>
-      <section id="main-container">
+      <section id="main-container-fluid">
+      <?php include_once 'partials/msg.php' ?>
         <?php 
             $user = $_SESSION['user'];
             
             $city = $user['city'];
             $blood_group = $user['blood_group'];
         
-            $sql = "SELECT * FROM request_blood WHERE city = '$city' AND blood_group = '$blood_group'  ORDER BY id DESC LIMIT 20";
+            $sql = "SELECT * FROM request_blood  WHERE city = '$city' AND blood_group = '$blood_group'  ORDER BY id DESC LIMIT 20";
             $results = $con->query($sql);
             // var_dump($results);
         ?>
-        <table>
+        <div class="dashboard">
+        <table class="table table-striped table-dark">
+          <thead>
             <tr>
-                <th>Name</th>
-                <th>BLood Group</th>
-                <th>Contact Number</th>
+              <th scope="col">Patient Name</th>
+              <th scope="col">Age</th>
+              <th scope="col">B-Group</th>
+              <th scope="col">Required Unit</th>
+              <th scope="col">Date of Donation</th>
+              <th scope="col">Patient History</th>              
+              <th scope="col">Hospital Name</th>
+              <th scope="col">Address</th>
+              <th scope="col">Contact Person</th>
+              <th scope="col">Contact Number</th>
             </tr>
+          </thead>
+          <tbody>
+            <?php  while($row = $results->fetch_assoc()): ?>
+            <tr>
+              <th scope="row"><?php echo $row['patient_name'] ?></th>
+              <td><?php echo $row['age'] ?></td>
+              <td><?php echo $row['blood_group'] ?></td>
+              <td><?php echo $row['required_unit'] ?></td>
+              <td> <?php echo $row['date_of_donation'] ?></td>
+              <td><?php echo $row['patient_history'] ?></td>
+              <td><?php echo $row['hospital_name'] ?></td>
+              <td><?php echo $row['hospital_address'] ?></td>
+              <td><?php echo $row['contact_person'] ?></td>
+              <td><?php echo $row['contact_number'] ?></td>
+            </tr>
+
+            <?php endwhile; ?>
+          </tbody>
         </table>
 
         <?php
@@ -81,11 +109,13 @@
                 echo "<tr>";
                 echo "<td> " . $row['patient_name'] . " </td>";
                 echo "<td> " . $row['blood_group'] . " </td>";
-                echo "<td> " . $row['contact_person_phone'] . " </td>";
+                echo "<td> " . $row['contact_number'] . " </td>";
+                echo "<td> " . $row['city'] . " </td>";
                 echo "</tr>";
             }
 
         ?>
+        </div>
 
 
       </section>

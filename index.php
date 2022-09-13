@@ -64,31 +64,31 @@
       <section id="main-container">
         <h1 class="text-center main-container-heading ">About Blood and Blood Donation</h1>
         <div class="row mt-5">
-          <div class="col-lg-6 d-block d-lg-flex justify-content-center">
+          <div class="col-lg-6 d-block d-lg-flex justify-content-center quarybox">
             <div class="main-container-content">
-              <h3 class="text-center font-weight-bolder">Who can Donate Blood</h3>
+              <h3 class="text-center font-weight-bolder main-query">Who can Donate Blood</h3>
               <div class="icon-center text-center">
                 <i class="fal fa-question fa-5x quary-icon mt-1 mb-2"></i>
               </div>
               <ul class="main-container-ul">
-                <li><a href="#">Demand for different blood types</a></li>
-                <li><a href="#">Demand for different blood types</a></li>
-                <li><a href="#">Demand for different blood types</a></li>
-                <li><a href="#">Demand for different blood types</a></li>
+              <li><a href="QnA/QnA1.php" target="_blank">What age do I need to be to donate?</a></li>
+                <li><a href="QnA/QnA2.php" target="_blank">What weight do I need to be to donate?</a></li>
+                <li><a href="QnA/QnA3.php" target="_blank">Can i give blood after travelling?</a></li>
+                <li><a href="QnA/QnA4.php" target="_blank">Can I donate if I have high blood pressure?</a></li>
               </ul>
             </div>
           </div>
-          <div class="col-lg-6 d-block d-lg-flex justify-content-center">
+          <div class="col-lg-6 d-block d-lg-flex justify-content-center quarybox">
             <div class="main-container-content">
-              <h3 class="text-center">Who can Donate Blood</h3>
+              <h3 class="text-center ">Frequently Ask Question</h3>
               <div class="icon-center text-center">
                 <i class="fal fa-question fa-5x quary-icon mt-1 mb-2"></i>
               </div>
               <ul class="main-container-ul">
-                <li><a href="#">Demand for different blood types</a></li>
-                <li><a href="#">Demand for different blood types</a></li>
-                <li><a href="#">Demand for different blood types</a></li>
-                <li><a href="#">Demand for different blood types</a></li>
+              <li><a href="QnA/QnA5.php" target="_blank">What happens when I give blood?</a></li>
+                <li><a href="QnA/QnA6.php" target="_blank">Is giving blood safe? </a></li>
+                <li><a href="QnA/QnA7.php" target="_blank">How will I feel after giving blood?</a></li>
+                <li><a href="QnA/QnA8.php" target="_blank">How much blood will be taken? Will I have enough? </a></li>
               </ul>
             </div>
           </div>
@@ -109,9 +109,9 @@
 
           <div class="col-lg-6 col-md-12 col-sm-12">
             <div class="social-icon d-flex justify-content-lg-end justify-content-md-center justify-content-sm-center align-items-lg-center">
-              <i class="fa-brands fa-facebook fb-icon fa-2x"></i>
-              <a href="https://facebook.com"><i class="fa-brands fa-youtube youtube-icon fa-2x"></i></a>
-              <i class="fa-brands fa-twitter twitter-icon fa-2x"></i>
+              <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook fb-icon fa-2x"></i></a>
+              <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube youtube-icon fa-2x"></i></a>
+              <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter twitter-icon fa-2x"></i></a>
             </div>
           </div>
         </div>
